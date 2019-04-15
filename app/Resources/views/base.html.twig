@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+{% block head %}
+    {% if app.user %}
+        <ul>
+            <a href="{{ path('security_logout') }}">
+                <li style="list-style-type: none">Logout</li>
+            </a>
+            <a href="{{ path('ranklist') }}">
+                <li style="list-style-type: none">Ranklist</li>
+            </a>
+        </ul>
+    {% else %}
+        <ul>
+            <a href="{{ path('user_register') }}">
+                <li style="list-style-type: none">Register</li>
+            </a>
+            <a href="{{ path('security_login') }}">
+                <li style="list-style-type: none">Login</li>
+            </a>
+        </ul>
+    {% endif %}
+
+{% endblock %}
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+</body>
+</html>

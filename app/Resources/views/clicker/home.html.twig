@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>Welcome {{ user.username }}</h1>
+    <p>{{ user.money }} money</p>
+    <a href="{{ path('count') }}" ><img src="{{ asset('Images/app_logo.png') }}"> </a>
+
+    <a href="{{ path('add_baron', {'money': user.money}) }}">Baron</a> || 10money
+
+{% endblock %}

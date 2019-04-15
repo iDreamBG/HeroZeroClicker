@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<table border="1">
+    <tr>
+        <td>Nickname</td>
+        <th>Money</th>
+        <th>Baron level</th>
+        <th>Baron booster </th>
+    </tr>
+    {% for user in users %}
+        <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ user.money }}</td>
+    {% else %}
+        <tr>
+            <td colspan="2">No rows</td>
+        </tr>
+    {% endfor %}
+{% endblock %}
+

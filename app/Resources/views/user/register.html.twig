@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content">
+
+        <form name="register" action="{{ path('user_register') }}" class="form insta" id="formRegister" method="post">
+
+            <label>Username</label>
+            <label>
+                <input name="user[username]" type="text">
+            </label>
+            <label>Password</label>
+            <label>
+                <input name="user[password][first]" type="password">
+            </label>
+            <label>Repeat Password</label>
+            <label>
+                <input name="user[password][second]" type="password">
+            </label>
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('register') }}">
+            <input id="btnRegister" value="Register" type="submit">
+            <br>
+
+        </form>
+    </div>
+{% endblock %}
